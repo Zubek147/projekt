@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Domowe Wydatki</h1>
+    <form action="/add_expanse" method="post">
+        <label for="expense">Nowy wydatek:</label>
+        <input type="text" id="expense" name="expense">
+        <button type="submit">Dodaj</button>
+    </form>
+    <h2>Lista Wydatków</h2>
+    <ul>
+        {% for expense in expenses %}
+        <li>{{ expense }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
